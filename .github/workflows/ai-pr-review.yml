@@ -1,0 +1,69 @@
+name: AI PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request number
+        required: true
+        type: number
+      allow_ai_upload:
+        description: Allow sending the redacted diff to the configured AI endpoint
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out trusted base-branch reviewer
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run PR review
+        id: review
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_REVIEW_AI_ENDPOINT: ${{ vars.PR_REVIEW_AI_ENDPOINT }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          PR_REVIEW_AI_MODEL: ${{ vars.PR_REVIEW_AI_MODEL }}
+          PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+          ALLOW_AI_UPLOAD: ${{ inputs.allow_ai_upload }}
+        run: |
+          args=(--repo "$GITHUB_REPOSITORY" --pr "$PR_NUMBER" --output pr-review-reports --comment)
+          if [ "$ALLOW_AI_UPLOAD" = "true" ]; then
+            args+=(--allow-ai-upload)
+          fi
+          set +e
+          python -m src.main "${args[@]}"
+          review_exit_code=$?
+          echo "exit_code=$review_exit_code" >> "$GITHUB_OUTPUT"
+          if [ "$review_exit_code" -eq 2 ]; then
+            exit 2
+          fi
+
+      - name: Upload review reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-review-reports
+          path: pr-review-reports/
+          if-no-files-found: warn
+
+      - name: Fail workflow when review finds issues
+        if: steps.review.outputs.exit_code == '1'
+        run: exit 1

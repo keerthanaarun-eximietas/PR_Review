@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "repository": "keerthanaarun-eximietas/Search_Algo",
+  "pull_request": {
+    "number": 1,
+    "title": "Binary Search",
+    "url": "https://github.com/keerthanaarun-eximietas/Search_Algo/pull/1",
+    "base_ref": "main",
+    "head_ref": "binary-search",
+    "head_sha": "191080fc76eddc6aefdbea62a92a860276aee188"
+  },
+  "standards": {
+    "source": "pr-review-reports\\.ai-review\\coding-standards.md",
+    "generated": true,
+    "basis": "generic_defaults"
+  },
+  "summary": {
+    "status": "fail",
+    "checks_total": 8,
+    "checks_passed": 3,
+    "checks_failed": 4,
+    "checks_incomplete": 1
+  },
+  "checks": [
+    {
+      "check_id": "filename_convention",
+      "category": "naming",
+      "status": "pass",
+      "summary": "Changed filenames follow the configured convention.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "1 issue(s) found.",
+      "findings": [
+        {
+          "file": "search.py",
+          "message": "Function name 'binarySearch' does not follow snake_case.",
+          "line": 17,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "variable_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "1 issue(s) found.",
+      "findings": [
+        {
+          "file": "search.py",
+          "message": "Variable name 'gitToken' does not follow snake_case.",
+          "line": 6,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "file_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Changed files are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Detected functions are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "formatting",
+      "category": "formatting",
+      "status": "fail",
+      "summary": "1 issue(s) found.",
+      "findings": [
+        {
+          "file": "search.py",
+          "message": "File does not end with a newline.",
+          "line": 51,
+          "severity": "low",
+          "reasoning": "A final newline is required by the configured formatting rules."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "hardcoded_secrets",
+      "category": "security",
+      "status": "fail",
+      "summary": "1 issue(s) found.",
+      "findings": [
+        {
+          "file": "search.py",
+          "message": "Potential hardcoded credential or private key detected; value omitted.",
+          "line": 6,
+          "severity": "high",
+          "reasoning": "Credentials should be supplied through a secret manager or environment configuration."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "ai_review",
+      "category": "ai",
+      "status": "skipped",
+      "summary": "AI review not run; pass --allow-ai-upload to send redacted PR diffs.",
+      "findings": [],
+      "details": null
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "repository": "keerthanaarun-eximietas/Search_Algo",
+  "pull_request": {
+    "number": 1,
+    "title": "Binary Search",
+    "url": "https://github.com/keerthanaarun-eximietas/Search_Algo/pull/1",
+    "base_ref": "main",
+    "head_ref": "binary-search",
+    "head_sha": "b06b4ec599d9446afa72ccd1a98b6374c7bc0fc6"
+  },
+  "standards": {
+    "source": "pr-review-reports\\.ai-review\\coding-standards.md",
+    "generated": true,
+    "basis": "generic_defaults"
+  },
+  "summary": {
+    "status": "fail",
+    "checks_total": 8,
+    "checks_passed": 5,
+    "checks_failed": 2,
+    "checks_incomplete": 1
+  },
+  "checks": [
+    {
+      "check_id": "filename_convention",
+      "category": "naming",
+      "status": "pass",
+      "summary": "Changed filenames follow the configured convention.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "1 issue(s) found.",
+      "findings": [
+        {
+          "file": "search.py",
+          "message": "Function name 'binarySearch' does not follow snake_case.",
+          "line": 16,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "variable_name_convention",
+      "category": "naming",
+      "status": "pass",
+      "summary": "Detected variable names follow the configured convention.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "file_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Changed files are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Detected functions are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "formatting",
+      "category": "formatting",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": "search.py",
+          "message": "File does not end with a newline.",
+          "line": 51,
+          "severity": "low",
+          "reasoning": "A final newline is required by the configured formatting rules."
+        },
+        {
+          "file": "search.py",
+          "message": "Line has trailing whitespace.",
+          "line": 51,
+          "severity": "low",
+          "reasoning": "Trailing whitespace creates noisy diffs and inconsistent formatting."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "hardcoded_secrets",
+      "category": "security",
+      "status": "pass",
+      "summary": "No likely hardcoded credentials were detected.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "ai_review",
+      "category": "ai",
+      "status": "skipped",
+      "summary": "AI review not run; pass --allow-ai-upload to send redacted PR diffs.",
+      "findings": [],
+      "details": null
+    }
+  ]
+}

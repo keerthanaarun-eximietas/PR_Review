@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0",
+  "repository": "keerthanaarun-eximietas/Search_Algo",
+  "pull_request": {
+    "number": 2,
+    "title": "Addition of Search Algos",
+    "url": "https://github.com/keerthanaarun-eximietas/Search_Algo/pull/2",
+    "base_ref": "main",
+    "head_ref": "ternary-search",
+    "head_sha": "3c506f926b87fb69b248f11e4f74e0f30fc0de41"
+  },
+  "standards": {
+    "source": "pr-review-reports\\.ai-review\\coding-standards.md",
+    "generated": true,
+    "basis": "base_branch_inference",
+    "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b",
+    "evidence": {
+      "method": "bounded deterministic sample of base-branch source files and tool configuration",
+      "base_ref": "main",
+      "files_available": 1,
+      "files_sampled": [
+        "search.py"
+      ],
+      "sample_limits": {
+        "max_files": 40,
+        "max_file_bytes": 100000,
+        "max_total_bytes": 1000000
+      },
+      "rules": {
+        "python": {
+          "function_name_convention": {
+            "observations": 2,
+            "counts": {
+              "snake_case": 2
+            },
+            "confidence": "low"
+          },
+          "variable_name_convention": {
+            "observations": 17,
+            "counts": {
+              "snake_case": 17
+            },
+            "confidence": "high"
+          }
+        },
+        "filename_convention": {
+          "observations": 1,
+          "counts": {
+            "kebab-case": 1
+          },
+          "confidence": "low"
+        },
+        "observed_line_length": {
+          "non_empty_lines": 37,
+          "sampled_90th_percentile": 60,
+          "confidence": "low",
+          "note": "No linter/editor setting found; default limit retained."
+        },
+        "max_function_lines": {
+          "python_functions_observed": 2,
+          "inferred_limit": 80,
+          "confidence": "low"
+        },
+        "max_file_lines": {
+          "files_sampled": 1,
+          "inferred_limit": 500,
+          "confidence": "low",
+          "note": "Estimated as 1.5 times the sampled 90th percentile, never stricter than the default; this is a heuristic."
+        }
+      },
+      "warnings": [],
+      "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b"
+    }
+  },
+  "summary": {
+    "status": "fail",
+    "checks_total": 8,
+    "checks_passed": 3,
+    "checks_failed": 4,
+    "checks_incomplete": 1
+  },
+  "checks": [
+    {
+      "check_id": "filename_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": ".gitignore",
+          "message": "Filename does not follow lower_snake_case.",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The filename convention is configured in the base-branch standards."
+        },
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Filename does not follow lower_snake_case.",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The filename convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "function_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Function name 'findTarget' does not follow snake_case.",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards."
+        },
+        {
+          "file": "tests/test_search_algorithms.py",
+          "message": "Function name 'setUp' does not follow snake_case.",
+          "line": 56,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "variable_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "3 issue(s) found.",
+      "findings": [
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Variable name 'searchItems' does not follow snake_case.",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards."
+        },
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Variable name 'currentItem' does not follow snake_case.",
+          "line": 4,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards."
+        },
+        {
+          "file": "search_algorithms/graph.py",
+          "message": "Variable name 'Node' does not follow snake_case.",
+          "line": 6,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "file_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Changed files are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Detected functions are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "formatting",
+      "category": "formatting",
+      "status": "pass",
+      "summary": "Changed files meet the configured basic formatting rules.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "hardcoded_secrets",
+      "category": "security",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": "search_algorithms/demo_config.py",
+          "message": "Potential hardcoded credential or private key detected; value omitted.",
+          "line": 3,
+          "severity": "high",
+          "reasoning": "Credentials should be supplied through a secret manager or environment configuration."
+        },
+        {
+          "file": "search_algorithms/demo_config.py",
+          "message": "Potential hardcoded credential or private key detected; value omitted.",
+          "line": 4,
+          "severity": "high",
+          "reasoning": "Credentials should be supplied through a secret manager or environment configuration."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "ai_review",
+      "category": "ai",
+      "status": "error",
+      "summary": "AI review failed after 1/15 diff chunks.",
+      "findings": [],
+      "details": "Partial findings collected: 0. Review stopped with: AI response was not valid JSON."
+    }
+  ]
+}

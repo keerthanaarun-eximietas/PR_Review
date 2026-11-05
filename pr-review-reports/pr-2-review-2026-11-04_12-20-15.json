@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "repository": "keerthanaarun-eximietas/Search_Algo",
+  "pull_request": {
+    "number": 2,
+    "title": "Addition of Search Algos",
+    "url": "https://github.com/keerthanaarun-eximietas/Search_Algo/pull/2",
+    "base_ref": "main",
+    "head_ref": "ternary-search",
+    "head_sha": "3c506f926b87fb69b248f11e4f74e0f30fc0de41"
+  },
+  "standards": {
+    "source": "pr-review-reports\\.ai-review\\coding-standards.md",
+    "generated": true,
+    "basis": "base_branch_inference",
+    "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b",
+    "evidence": {
+      "method": "bounded deterministic sample of base-branch source files and tool configuration",
+      "base_ref": "main",
+      "files_available": 1,
+      "files_sampled": [
+        "search.py"
+      ],
+      "sample_limits": {
+        "max_files": 40,
+        "max_file_bytes": 100000,
+        "max_total_bytes": 1000000
+      },
+      "rules": {
+        "python": {
+          "function_name_convention": {
+            "observations": 2,
+            "counts": {
+              "snake_case": 2
+            },
+            "confidence": "low"
+          },
+          "variable_name_convention": {
+            "observations": 17,
+            "counts": {
+              "snake_case": 17
+            },
+            "confidence": "high"
+          }
+        },
+        "filename_convention": {
+          "observations": 1,
+          "counts": {
+            "kebab-case": 1
+          },
+          "confidence": "low"
+        },
+        "observed_line_length": {
+          "non_empty_lines": 37,
+          "sampled_90th_percentile": 60,
+          "confidence": "low",
+          "note": "No linter/editor setting found; default limit retained."
+        },
+        "max_function_lines": {
+          "python_functions_observed": 2,
+          "inferred_limit": 80,
+          "confidence": "low"
+        },
+        "max_file_lines": {
+          "files_sampled": 1,
+          "inferred_limit": 500,
+          "confidence": "low",
+          "note": "Estimated as 1.5 times the sampled 90th percentile, never stricter than the default; this is a heuristic."
+        }
+      },
+      "warnings": [],
+      "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b"
+    }
+  },
+  "summary": {
+    "status": "fail",
+    "checks_total": 8,
+    "checks_passed": 3,
+    "checks_failed": 5,
+    "checks_incomplete": 0
+  },
+  "checks": [
+    {
+      "check_id": "filename_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": ".gitignore",
+          "message": "Filename does not follow lower_snake_case.",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The filename convention is configured in the base-branch standards."
+        },
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Filename does not follow lower_snake_case.",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The filename convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "function_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Function name 'findTarget' does not follow snake_case.",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards."
+        },
+        {
+          "file": "tests/test_search_algorithms.py",
+          "message": "Function name 'setUp' does not follow snake_case.",
+          "line": 56,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "variable_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "3 issue(s) found.",
+      "findings": [
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Variable name 'searchItems' does not follow snake_case.",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards."
+        },
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Variable name 'currentItem' does not follow snake_case.",
+          "line": 4,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards."
+        },
+        {
+          "file": "search_algorithms/graph.py",
+          "message": "Variable name 'Node' does not follow snake_case.",
+          "line": 6,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "file_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Changed files are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Detected functions are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "formatting",
+      "category": "formatting",
+      "status": "pass",
+      "summary": "Changed files meet the configured basic formatting rules.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "hardcoded_secrets",
+      "category": "security",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": "search_algorithms/demo_config.py",
+          "message": "Potential hardcoded credential or private key detected; value omitted.",
+          "line": 3,
+          "severity": "high",
+          "reasoning": "Credentials should be supplied through a secret manager or environment configuration."
+        },
+        {
+          "file": "search_algorithms/demo_config.py",
+          "message": "Potential hardcoded credential or private key detected; value omitted.",
+          "line": 4,
+          "severity": "high",
+          "reasoning": "Credentials should be supplied through a secret manager or environment configuration."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "ai_review",
+      "category": "ai",
+      "status": "fail",
+      "summary": "10 additional contextual issue(s) found across 15 diff chunks.",
+      "findings": [
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Duplicate linear search logic",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The function implements a linear search identical to linear_search in search_algorithms/sequential.py, duplicating existing functionality and violating the DRY principle."
+        },
+        {
+          "file": "search.py",
+          "message": "Removed local implementations of linear_search and binary_search, but imports may not expose them",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The original file defined linear_search and binary_search directly. The new code imports these from search_algorithms, but the package’s __init__ does not expose them, leading to ImportError and breaking the public API expected by consumers and tests."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Duplicate linear-search logic present",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The file contains two identical implementations of a linear scan (duplicated_linear_scan and duplicated_linear_scan_again), violating the guideline to avoid duplicating existing logic."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Off-by-one error in binary search implementation",
+          "line": 1,
+          "severity": "high",
+          "reasoning": "binary_search_off_by_one returns middle + 1 on a match, which is incorrect for a binary search and would lead to incorrect indices being returned."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Potential division by zero in interpolation search",
+          "line": 1,
+          "severity": "high",
+          "reasoning": "interpolation_search_divide_by_zero uses items[high] - items[low] as a denominator without guarding against equal endpoints, which can cause a ZeroDivisionError."
+        },
+        {
+          "file": "search_algorithms/ordered.py",
+          "message": "Duplicate binary_search implementation",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The binary_search function is already defined in search_algorithms/search.py. Re‑implementing it here duplicates logic and violates the DRY principle."
+        },
+        {
+          "file": "search_algorithms/ordered.py",
+          "message": "Duplicate interpolation_search implementation",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The interpolation_search function is also defined in search_algorithms/intentional_bugs.py. Having two identical implementations increases maintenance burden and risks inconsistency."
+        },
+        {
+          "file": "search_algorithms/sequential.py",
+          "message": "Sentinel search docstring claims to restore input, but implementation uses a copy and does not modify the original sequence.",
+          "line": 15,
+          "severity": "low",
+          "reasoning": "The function creates a new list from the input and appends a sentinel, so the original sequence remains unchanged. The docstring stating \"while restoring the input afterward\" is misleading and violates accurate documentation principles."
+        },
+        {
+          "file": "fixtures/generate_rule_violations.py",
+          "message": "write_fixtures does not create missing_final_newline.py",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The test RuleViolationFixtureTests expects a file named missing_final_newline.py to exist and lack a trailing newline, but write_fixtures only creates Bad-Names.py, oversized_module.py, oversized_function.py, and overlong_line.py. This mismatch causes the test to fail and indicates a design inconsistency between the fixture generator and its consumer."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Duplicate linear scan implementations",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The module defines two separate functions, duplicated_linear_scan and duplicated_linear_scan_again, that perform identical linear search logic. This violates the principle of avoiding duplicated code and can lead to maintenance overhead. A single implementation should be reused instead of duplicating logic."
+        }
+      ],
+      "details": "Suppressed 1 AI finding(s) that repeated deterministic naming, size, formatting, or secret checks. Deterministic checks run: filename_convention: fail, function_name_convention: fail, variable_name_convention: fail, file_length: pass, function_length: pass, formatting: pass, hardcoded_secrets: fail."
+    }
+  ]
+}

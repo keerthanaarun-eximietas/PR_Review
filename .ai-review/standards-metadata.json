@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "source": "repository",
+  "generated": false,
+  "description": "Starter standards configuration. The PR reviewer prefers standards fetched from the pull request base branch."
+}

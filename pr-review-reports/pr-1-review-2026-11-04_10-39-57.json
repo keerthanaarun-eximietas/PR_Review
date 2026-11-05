@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "repository": "keerthanaarun-eximietas/Search_Algo",
+  "pull_request": {
+    "number": 1,
+    "title": "Binary Search",
+    "url": "https://github.com/keerthanaarun-eximietas/Search_Algo/pull/1",
+    "base_ref": "main",
+    "head_ref": "binary-search",
+    "head_sha": "811c3414e3d14c3498c8c500fb5dc0861561c538"
+  },
+  "standards": {
+    "source": "pr-review-reports\\.ai-review\\coding-standards.md",
+    "generated": true,
+    "basis": "base_branch_inference",
+    "base_sha": "fc4b2835bdc79aa33087abf9c81a9db8c1c1e631",
+    "evidence": {
+      "method": "bounded deterministic sample of base-branch source files and tool configuration",
+      "base_ref": "main",
+      "files_available": 1,
+      "files_sampled": [
+        "search.py"
+      ],
+      "sample_limits": {
+        "max_files": 40,
+        "max_file_bytes": 100000,
+        "max_total_bytes": 1000000
+      },
+      "rules": {
+        "python": {
+          "function_name_convention": {
+            "observations": 1,
+            "counts": {
+              "snake_case": 1
+            },
+            "confidence": "low"
+          },
+          "variable_name_convention": {
+            "observations": 7,
+            "counts": {
+              "snake_case": 7
+            },
+            "confidence": "high"
+          }
+        },
+        "filename_convention": {
+          "observations": 1,
+          "counts": {
+            "kebab-case": 1
+          },
+          "confidence": "low"
+        },
+        "observed_line_length": {
+          "non_empty_lines": 17,
+          "sampled_90th_percentile": 55,
+          "confidence": "low",
+          "note": "No linter/editor setting found; default limit retained."
+        },
+        "max_function_lines": {
+          "python_functions_observed": 1,
+          "inferred_limit": 80,
+          "confidence": "low"
+        },
+        "max_file_lines": {
+          "files_sampled": 1,
+          "inferred_limit": 500,
+          "confidence": "low",
+          "note": "Estimated as 1.5 times the sampled 90th percentile, never stricter than the default; this is a heuristic."
+        }
+      },
+      "warnings": [],
+      "base_sha": "fc4b2835bdc79aa33087abf9c81a9db8c1c1e631"
+    }
+  },
+  "summary": {
+    "status": "pass",
+    "checks_total": 8,
+    "checks_passed": 8,
+    "checks_failed": 0,
+    "checks_incomplete": 0
+  },
+  "checks": [
+    {
+      "check_id": "filename_convention",
+      "category": "naming",
+      "status": "pass",
+      "summary": "Changed filenames follow the configured convention.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_name_convention",
+      "category": "naming",
+      "status": "pass",
+      "summary": "Detected function names follow the configured convention.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "variable_name_convention",
+      "category": "naming",
+      "status": "pass",
+      "summary": "Detected variable names follow the configured convention.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "file_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Changed files are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Detected functions are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "formatting",
+      "category": "formatting",
+      "status": "pass",
+      "summary": "Changed files meet the configured basic formatting rules.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "hardcoded_secrets",
+      "category": "security",
+      "status": "pass",
+      "summary": "No likely hardcoded credentials were detected.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "ai_review",
+      "category": "ai",
+      "status": "pass",
+      "summary": "No AI-review issues found.",
+      "findings": [],
+      "details": null
+    }
+  ]
+}

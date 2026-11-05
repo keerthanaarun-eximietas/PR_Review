@@ -1,0 +1,19 @@
+{
+  "filename_convention": "lower_snake_case",
+  "function_name_convention": "snake_case",
+  "variable_name_convention": "snake_case",
+  "max_file_lines": 500,
+  "max_function_lines": 80,
+  "max_line_length": 120,
+  "require_final_newline": false,
+  "filename_exemptions": [
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "language_conventions": {
+    "python": {
+      "variable_name_convention": "snake_case"
+    }
+  }
+}

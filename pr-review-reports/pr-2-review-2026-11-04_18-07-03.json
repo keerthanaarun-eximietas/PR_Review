@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "repository": "keerthanaarun-eximietas/Search_Algo",
+  "pull_request": {
+    "number": 2,
+    "title": "Addition of Search Algos",
+    "url": "https://github.com/keerthanaarun-eximietas/Search_Algo/pull/2",
+    "base_ref": "main",
+    "head_ref": "ternary-search",
+    "head_sha": "3c506f926b87fb69b248f11e4f74e0f30fc0de41"
+  },
+  "standards": {
+    "source": "pr-review-reports\\.ai-review\\coding-standards.md",
+    "generated": true,
+    "basis": "base_branch_inference",
+    "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b",
+    "evidence": {
+      "method": "bounded deterministic sample of base-branch source files and tool configuration",
+      "base_ref": "main",
+      "files_available": 1,
+      "files_sampled": [
+        "search.py"
+      ],
+      "sample_limits": {
+        "max_files": 40,
+        "max_file_bytes": 100000,
+        "max_total_bytes": 1000000
+      },
+      "rules": {
+        "python": {
+          "function_name_convention": {
+            "observations": 2,
+            "counts": {
+              "snake_case": 2
+            },
+            "confidence": "low"
+          },
+          "variable_name_convention": {
+            "observations": 17,
+            "counts": {
+              "snake_case": 17
+            },
+            "confidence": "high"
+          }
+        },
+        "filename_convention": {
+          "observations": 1,
+          "counts": {
+            "kebab-case": 1
+          },
+          "confidence": "low"
+        },
+        "observed_line_length": {
+          "non_empty_lines": 37,
+          "sampled_90th_percentile": 60,
+          "confidence": "low",
+          "note": "No linter/editor setting found; default limit retained."
+        },
+        "max_function_lines": {
+          "python_functions_observed": 2,
+          "inferred_limit": 80,
+          "confidence": "low"
+        },
+        "max_file_lines": {
+          "files_sampled": 1,
+          "inferred_limit": 500,
+          "confidence": "low",
+          "note": "Estimated as 1.5 times the sampled 90th percentile, never stricter than the default; this is a heuristic."
+        }
+      },
+      "warnings": [],
+      "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b"
+    }
+  },
+  "summary": {
+    "status": "fail",
+    "checks_total": 8,
+    "checks_passed": 3,
+    "checks_failed": 5,
+    "checks_incomplete": 0
+  },
+  "checks": [
+    {
+      "check_id": "filename_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": ".gitignore",
+          "message": "Filename does not follow lower_snake_case.",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The filename convention is configured in the base-branch standards.",
+          "potential_solution": "Rename the file to \"gitignore\" to match the lower_snake_case convention. The file name should be all lowercase with underscores only, e.g., \"gitignore\"."
+        },
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Filename does not follow lower_snake_case.",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The filename convention is configured in the base-branch standards.",
+          "potential_solution": "Rename the file to \"bad_names.py\" to follow lower_snake_case. All filenames should be lowercase with underscores separating words."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "function_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Function name 'findTarget' does not follow snake_case.",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards.",
+          "potential_solution": "Rename the function to \"find_target\" to satisfy snake_case. Update all calls to this function accordingly."
+        },
+        {
+          "file": "tests/test_search_algorithms.py",
+          "message": "Function name 'setUp' does not follow snake_case.",
+          "line": 56,
+          "severity": "medium",
+          "reasoning": "The function naming convention is configured in the base-branch standards.",
+          "potential_solution": "Rename the method to \"set_up\" to follow snake_case. Update the test class to use the new method name."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "variable_name_convention",
+      "category": "naming",
+      "status": "fail",
+      "summary": "3 issue(s) found.",
+      "findings": [
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Variable name 'searchItems' does not follow snake_case.",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards.",
+          "potential_solution": "Rename the parameter to \"search_items\" to follow snake_case. Update all references within the function."
+        },
+        {
+          "file": "fixtures/Bad-Names.py",
+          "message": "Variable name 'currentItem' does not follow snake_case.",
+          "line": 4,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards.",
+          "potential_solution": "Rename the loop variable to \"current_item\" to follow snake_case. Update the loop body accordingly."
+        },
+        {
+          "file": "search_algorithms/graph.py",
+          "message": "Variable name 'Node' does not follow snake_case.",
+          "line": 6,
+          "severity": "medium",
+          "reasoning": "The variable naming convention is configured in the base-branch standards.",
+          "potential_solution": "Rename the type variable to \"node\" or \"NodeType\" to follow snake_case. Since TypeVar names are typically capitalized, consider using \"NodeType\" and update all references."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "file_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Changed files are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "function_length",
+      "category": "size",
+      "status": "pass",
+      "summary": "Detected functions are within the configured line limit.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "formatting",
+      "category": "formatting",
+      "status": "pass",
+      "summary": "Changed files meet the configured basic formatting rules.",
+      "findings": [],
+      "details": null
+    },
+    {
+      "check_id": "hardcoded_secrets",
+      "category": "security",
+      "status": "fail",
+      "summary": "2 issue(s) found.",
+      "findings": [
+        {
+          "file": "search_algorithms/demo_config.py",
+          "message": "Potential hardcoded credential or private key detected; value omitted.",
+          "line": 3,
+          "severity": "high",
+          "reasoning": "Credentials should be supplied through a secret manager or environment configuration.",
+          "potential_solution": "Remove the hardcoded secret from the file. Replace the placeholder with an environment variable reference, e.g., os.getenv(\"MY_SECRET\"), and document that the secret must be supplied via environment or secret manager."
+        },
+        {
+          "file": "search_algorithms/demo_config.py",
+          "message": "Potential hardcoded credential or private key detected; value omitted.",
+          "line": 4,
+          "severity": "high",
+          "reasoning": "Credentials should be supplied through a secret manager or environment configuration.",
+          "potential_solution": "Replace the hardcoded secret placeholders with environment variable lookups. For example, change the code to read the secret from an environment variable using `os.getenv(\"MY_SECRET\")` and provide a clear fallback or raise an informative error if the variable is missing. Ensure the secret is not committed to the repository and add the variable name to a `.env.example` file for developers to set locally."
+        }
+      ],
+      "details": null
+    },
+    {
+      "check_id": "ai_review",
+      "category": "ai",
+      "status": "fail",
+      "summary": "10 additional contextual issue(s) found across 15 diff chunks.",
+      "findings": [
+        {
+          "file": "search.py",
+          "message": "search.py now only re-exports functions instead of providing implementations",
+          "line": 1,
+          "severity": "medium",
+          "reasoning": "The original file defined linear_search and binary_search directly, which are used by tests and documentation. Replacing them with imports from search_algorithms removes the local definitions, potentially breaking imports that expect these functions to be defined in search.py. This violates the design principle that a module should provide its own public API rather than rely on re-exporting, and may cause circular import issues if search_algorithms imports search.py.",
+          "potential_solution": "Restore the original function definitions in search.py or explicitly expose them via __all__ in search_algorithms and document that search.py is a thin wrapper. Ensure that search.py remains the primary entry point for these algorithms to avoid breaking existing imports."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Duplicate implementation of binary search with off‑by‑one error",
+          "line": 1,
+          "severity": "low",
+          "reasoning": "The function returns `middle + 1` instead of `middle`, causing an incorrect index. This logic is already provided correctly in `search_algorithms.search.binary_search`.",
+          "potential_solution": "Remove this function or correct it to return `middle` and delegate to the existing binary search implementation."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Potential division by zero in interpolation search",
+          "line": 12,
+          "severity": "low",
+          "reasoning": "When `items[high] == items[low]`, the denominator `items[high] - items[low]` becomes zero, raising a `ZeroDivisionError`. The algorithm should guard against this case.",
+          "potential_solution": "Add a check for equal endpoints and return `-1` or handle the case separately before computing the position."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Redundant linear‑scan implementation",
+          "line": 20,
+          "severity": "low",
+          "reasoning": "`duplicated_linear_scan` duplicates the logic of `search_algorithms.search.linear_search`, increasing maintenance burden.",
+          "potential_solution": "Remove this function and use the existing `linear_search` instead."
+        },
+        {
+          "file": "search_algorithms/intentional_bugs.py",
+          "message": "Second redundant linear‑scan implementation",
+          "line": 30,
+          "severity": "low",
+          "reasoning": "`duplicated_linear_scan_again` repeats the same logic as `duplicated_linear_scan`, providing no additional value.",
+          "potential_solution": "Eliminate this duplicate and rely on the single linear‑scan implementation."
+        },
+        {
+          "file": "search_algorithms/ordered.py",
+          "message": "Duplicate binary_search implementation",
+          "line": 4,
+          "severity": "medium",
+          "reasoning": "The repository already provides a binary_search function in search_algorithms/search.py. Adding an identical implementation in ordered.py duplicates logic, violating DRY principles and increasing maintenance burden.",
+          "potential_solution": "Remove the binary_search function from ordered.py and import it from search_algorithms.search, or rename it if a distinct behavior is intended."
+        },
+        {
+          "file": "search_algorithms/sequential.py",
+          "message": "Duplicate implementation of linear_search",
+          "line": 10,
+          "severity": "medium",
+          "reasoning": "The repository already provides a linear_search function in search_algorithms/linear_search.py. Adding an identical function in a new module duplicates logic, violates DRY, and can cause confusion when importing.",
+          "potential_solution": "Remove the linear_search definition from sequential.py and import the existing implementation instead."
+        },
+        {
+          "file": "search_algorithms/sequential.py",
+          "message": "Inaccurate docstring for sentinel_search",
+          "line": 15,
+          "severity": "low",
+          "reasoning": "The docstring claims the function restores the input afterward, but it operates on a copy of the input and does not modify the original sequence. This misleads users about side effects.",
+          "potential_solution": "Update the docstring to state that the function operates on a copy and does not modify the original sequence."
+        },
+        {
+          "file": "fixtures/generate_rule_violations.py",
+          "message": "Incomplete string literal in overlong_line write_text call",
+          "line": 20,
+          "severity": "high",
+          "reasoning": "The code ends with `encoding=\"` without closing quote or value, causing a syntax error and preventing the module from importing. This violates basic syntax and will break any test that imports the module.",
+          "potential_solution": "Close the string literal and provide a valid encoding, e.g., `encoding=\"utf-8\"`."
+        },
+        {
+          "file": "fixtures/generate_rule_violations.py",
+          "message": "Missing creation of missing_final_newline.py",
+          "line": null,
+          "severity": "medium",
+          "reasoning": "The test `tests/test_fixture_generator.py` expects a file named `missing_final_newline.py` to exist and lack a trailing newline. The current implementation of `write_fixtures` does not create this file, leading to a test failure. This indicates a mismatch between test expectations and implementation.",
+          "potential_solution": "Add a call to `(output_dir / \"missing_final_newline.py\").write_bytes(b\"\\n\")` or appropriate content without a trailing newline to satisfy the test."
+        }
+      ],
+      "details": "Suppressed 1 AI finding(s) that repeated deterministic naming, size, formatting, or secret checks. Deterministic checks run: filename_convention: fail, function_name_convention: fail, variable_name_convention: fail, file_length: pass, function_length: pass, formatting: pass, hardcoded_secrets: fail.\n\nAI generated potential solutions for 9 findings."
+    }
+  ]
+}

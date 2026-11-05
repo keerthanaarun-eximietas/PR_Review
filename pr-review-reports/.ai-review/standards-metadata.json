@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "source": "generated",
+  "generated": true,
+  "generation_method": "base_branch_inference",
+  "repository_conventions_inferred": true,
+  "repository": "keerthanaarun-eximietas/Search_Algo",
+  "base_ref": "main",
+  "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b",
+  "generated_rules": {
+    "filename_convention": "lower_snake_case",
+    "function_name_convention": "snake_case",
+    "variable_name_convention": "snake_case",
+    "max_file_lines": 500,
+    "max_function_lines": 80,
+    "max_line_length": 120,
+    "require_final_newline": true,
+    "filename_exemptions": [
+      "README.md",
+      "LICENSE",
+      "CHANGELOG.md"
+    ],
+    "language_conventions": {
+      "python": {
+        "variable_name_convention": "snake_case"
+      }
+    }
+  },
+  "evidence": {
+    "method": "bounded deterministic sample of base-branch source files and tool configuration",
+    "base_ref": "main",
+    "files_available": 1,
+    "files_sampled": [
+      "search.py"
+    ],
+    "sample_limits": {
+      "max_files": 40,
+      "max_file_bytes": 100000,
+      "max_total_bytes": 1000000
+    },
+    "rules": {
+      "python": {
+        "function_name_convention": {
+          "observations": 2,
+          "counts": {
+            "snake_case": 2
+          },
+          "confidence": "low"
+        },
+        "variable_name_convention": {
+          "observations": 17,
+          "counts": {
+            "snake_case": 17
+          },
+          "confidence": "high"
+        }
+      },
+      "filename_convention": {
+        "observations": 1,
+        "counts": {
+          "kebab-case": 1
+        },
+        "confidence": "low"
+      },
+      "observed_line_length": {
+        "non_empty_lines": 37,
+        "sampled_90th_percentile": 60,
+        "confidence": "low",
+        "note": "No linter/editor setting found; default limit retained."
+      },
+      "max_function_lines": {
+        "python_functions_observed": 2,
+        "inferred_limit": 80,
+        "confidence": "low"
+      },
+      "max_file_lines": {
+        "files_sampled": 1,
+        "inferred_limit": 500,
+        "confidence": "low",
+        "note": "Estimated as 1.5 times the sampled 90th percentile, never stricter than the default; this is a heuristic."
+      }
+    },
+    "warnings": [],
+    "base_sha": "d8d772db058bbd150a48f2b9bdcbd161dcce6b6b"
+  }
+}
